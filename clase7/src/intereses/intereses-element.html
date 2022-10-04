@@ -80,10 +80,12 @@
         };
       }
 
-      _detectarEnter = (e) =>
-        e.charCode == 13 && !this.maximoIntereses
-          ? this.push("intereses", this.interes)
-          : (this.interes = "");
+      _detectarEnter(e) {
+        if(e.charCode == 13 && !this.maximoIntereses) {
+          this.push('intereses', this.interes);
+          this.interes = '';
+        }
+      }
 
       borrarInteres = (e) => {
         console.log("borrar", e.detail.id);
